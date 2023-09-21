@@ -12,7 +12,13 @@ public class Main {
         p1.printMyName();
         p1.work();
 
+        System.out.println("-----------");
         Person[] person = new Person[]{m1, p1};
+        for(int i= 0; i!= person.length; i++){
+            if(person[i] instanceof Manager){
+                ((Manager) person[i]).work();
+            }
+        }
 
     }
 }

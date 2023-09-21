@@ -15,12 +15,6 @@ public class Manager extends Employee {
     public void work(){
         System.out.println("Manager is working");
     }
-    public void makeManagersWork(){
-        for(int i= 0; i!= person.length; i++){
-            if(person[i] instanceof Manager){
-                ((Manager) person[i]).work();
-            }
-        }
-    }
+
 
 }
