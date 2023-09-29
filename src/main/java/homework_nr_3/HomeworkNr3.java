@@ -6,7 +6,7 @@ public class HomeworkNr3 {
         // nr4
         int month = 3;
 
-        switch(month){
+        switch (month) {
             case 1:
                 System.out.println("Январь");
                 break;
@@ -48,33 +48,33 @@ public class HomeworkNr3 {
         }
 
         //Nr5
-        for (int i=100; i<=1000; i++){
-            if (i%5==0) {
-                System.out.print(i+",");
+        for (int i = 100; i <= 1000; i++) {
+            if (i % 5 == 0) {
+                System.out.print(i + ",");
             }
         }
 
 
         System.out.println();
         //Nr6
-        double sum= 0;
-        for( double i = 1; i<=98; i+=2){
-            double j =i+2;
-            sum += i/j;
-            System.out.printf(i+"/"+j+"+");
-        }
-        System.out.println();
-        System.out.println("sum = " + sum);
 
-//        System.out.println();
-//
-//        int sum= 0;
-//        for( int i = 1; i<=98; i+=2){
-//            int j =i+2;
+//        double sum= 0;
+//        for( double i = 1; i<=98; i+=2){
+//            double j =i+2;
 //            sum += i/j;
 //            System.out.printf(i+"/"+j+"+");
 //        }
 //        System.out.println();
 //        System.out.println("sum = " + sum);
+
+//        System.out.println();
+//
+        float sum = 0;
+        for (float i = 1; i <= 98; i += 2) {
+            sum += i / (i + 1);
+            System.out.println(i / (i + 2));
+        }
+        System.out.println(sum);
+//
     }
 }
