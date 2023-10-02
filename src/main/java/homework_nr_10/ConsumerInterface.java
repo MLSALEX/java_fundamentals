@@ -3,7 +3,7 @@ package homework_nr_10;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Consumer {
+public class ConsumerInterface {
     public static void main(String[] args) {
         List<String> listOfItems = new ArrayList<>();
         listOfItems.add("apple");

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PredicInterface {
+public class PredicateInterface {
     public static void main(String[] args) {
         List<Integer> intList = new ArrayList<>();
         for(int i = 0; i<=20; i++) {
