@@ -1,0 +1,3 @@
+Average grade is: 84.3
+The youngest person: Bob (age:22)
+The oldest person: Eve (age:30)
