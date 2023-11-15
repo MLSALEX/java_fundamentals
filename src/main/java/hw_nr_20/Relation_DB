@@ -1,0 +1,85 @@
+create table departments(
+	department_id serial primary key,
+	department_name varchar(50) not null
+);
+
+insert into departments(department_name)
+values
+	('Marketing'),
+	('Sales'),
+	('IT'),
+	('Logistics');
+
+create table employees(
+	employee_id serial primary key,
+	employee_name varchar(50) not null,
+	department_id int,
+	foreign key (department_id)references departments(department_id)
+);
+
+insert into employees(employee_name, department_id )
+values
+	('Ivan Petrov', 1),
+	('Anna Sidorova' , 2),
+	('Dmitriy Kozlov', 3 ),
+	('Elena Novikova', 4);
+
+insert into employees(employee_name)
+values
+	('Maria Kol'),
+	('Serghei Ribakov');
+
+create table projects(
+	project_id serial primary key,
+	project_name text not null
+);
+
+begin transaction;
+drop table projects;
+rollback;
+
+insert into projects(project_name)
+values
+	('Launching a social media advertising campaign'),
+	('Implementing a new CRM system for client relationship management'),
+	('Migrating servers to a cloud platform'),
+	('Optimizing logistics processes in the warehouse');
+
+create table employee_projects(
+	employee_id int,
+	project_id int,
+	foreign key (employee_id) references employees(employee_id),
+	foreign key (project_id) references projects(project_id)
+);
+
+insert into employee_projects(employee_id,project_id)
+values
+ 	(1,1),
+ 	(2,2),
+ 	(3,3),
+ 	(4,4);
+
+select e.employee_name, department_name
+from departments d
+	inner join employees e on e.department_id =d.department_id;
+
+select e.employee_name, department_name
+from departments d
+	right join employees e on e.department_id =d.department_id
+	where e.department_id is null;
+
+
+select p.project_name, e.employee_name
+from departments d
+	inner join employees e on e.department_id =d.department_id
+	inner join employee_projects ep  on ep.employee_id = e.employee_id
+	inner join projects p on p.project_id = ep.project_id;
+
+select e.employee_name, department_name
+from departments d
+	right join employees e on e.department_id =d.department_id;
+
+select department_name, count (employee_id)
+from departments d
+	right join employees e on e.department_id =d.department_id
+	group by department_name;
